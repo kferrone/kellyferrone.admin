@@ -1,0 +1,27 @@
+{
+  "hosting": [
+    {
+      "target": "admin",
+      "public": "dist/",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "/meta",
+          "function": "metaFx"
+        },
+        {
+          "source": "/blog/**",
+          "function": "blogFx"
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

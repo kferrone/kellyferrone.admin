@@ -1,0 +1,61 @@
+{
+  "name": "admin.kellyferrone.com",
+  "description": "The admin side of the blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "serve:fire": "firebase serve",
+    "build:prod": "vue-cli-service build",
+    "build": "vue-cli-service build --mode development --dest dist/public src/main.js",
+    "build:admin": "vue-cli-service build --mode development --dest dist/admin src/admin.js",
+    "lint": "vue-cli-service lint",
+    "deploy": "firebase deploy",
+    "builder": "gcloud builds submit --config=./builder/cloudbuild.yaml ./builder"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "purecss": "^1.0.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-plugin-eslint": "^3.0.4",
+    "@vue/cli-service": "^3.0.4",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.3.2",
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "sass-loader": "^7.1.0",
+    "style-resources-loader": "^1.2.1",
+    "vue-cli-plugin-coffee": "^0.1.0",
+    "vue-cli-plugin-pug": "^1.0.7",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.8"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

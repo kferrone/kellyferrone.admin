@@ -1,0 +1,28 @@
+steps:
+
+- id: install
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
+
+- id: lint
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['run','lint']
+
+- id: build
+  name: 'gcr.io/cloud-builders/npm'
+  args: ['run','build:prod']
+  env:
+    - 'NODE_ENV=production'
+    - 'VUE_APP_HOST=$_VUE_APP_HOST'
+
+- id: deploy
+  name: 'gcr.io/$PROJECT_ID/firebase'
+  args: ['deploy','--only','hosting:admin']
+  env:
+    - 'FIREBASE_TOKEN=$_FIREBASE_TOKEN'
+    - 'FIREBASERC=$_FIREBASERC'
+
+substitutions:
+  _FIREBASE_TOKEN: token
+  _FIREBASERC: Your firebaserc file
+  _VUE_APP_HOST: https://example.com
