@@ -16,14 +16,14 @@
 import AdminSidebar from '@/components/AdminSidebar.vue'
 import AdminHeader from '@/components/AdminHeader.vue'
 export default
-    name: 'app'
-    components: {
-      AdminSidebar
-      AdminHeader
-    }
-    data: ->
-        title: "Admin"
-
+  name: 'app'
+  components: {
+    AdminSidebar
+    AdminHeader
+  }
+  data: ->
+    title: "Admin"
+    authenticated: false
 </script>
 
 <style lang="sass">
