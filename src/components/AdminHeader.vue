@@ -6,7 +6,7 @@
 
 <script lang="coffee">
 export default
-  name: 'sidebar'
+  name: 'admin-header'
   props:
     title: ''
     subTitle: ''

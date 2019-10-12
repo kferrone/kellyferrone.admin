@@ -33,11 +33,6 @@ export default
     login: ->
       firebase.auth()
               .signInWithEmailAndPassword(@email,@password)
-              .then(
-                (user) =>
-                  console.log('Logged in with', user)
-                  @$router.replace('/')
-              )
               .catch(
                 (error) =>
                   console.error(error)
