@@ -7,19 +7,21 @@
 </template>
 <script lang="coffee">
 # import Quill from 'quill'
-import Quill from '../lib/Quill.js';
+import Quill from '../lib/quill.js';
 export default
-	name: 'rich-text-editor'
-	props:
-		value: String
-	data: ->
-		editor: null
-	mounted: ->
-		@editor = new Quill(@$refs.editor,
-			theme: 'snow'
-		)
-		@editor.root.innerHTML = @value
-		@editor.on('text-change', ->);
+  name: 'rich-text-editor'
+  props:
+    value:
+      type: String
+      default: ''
+  data: ->
+    editor: null
+  mounted: ->
+    @editor = new Quill(@$refs.editor,
+      theme: 'snow'
+    )
+    @editor.root.innerHTML = @value
+    @editor.on('text-change', ->);
 </script>
 <style lang="sass">
 @import '~quill/dist/quill.core.css'
